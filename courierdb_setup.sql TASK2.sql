@@ -1,0 +1,13 @@
+USE CourierDB;
+SELECT * FROM User;
+SELECT * FROM Courier;
+SELECT * FROM Courier WHERE TrackingNumber = 'TRK12345';
+SELECT * FROM Courier WHERE CourierID = 1;
+SELECT * FROM Courier WHERE Status != 'Delivered';
+SELECT * FROM Courier WHERE DeliveryDate = CURDATE();
+SELECT * FROM Courier WHERE Status = 'Pending';
+SELECT CourierID, COUNT(*) AS TotalPackages FROM Courier GROUP BY CourierID;
+SELECT CourierID, AVG(DATEDIFF(DeliveryDate, NOW())) AS AvgDeliveryTime FROM Courier GROUP BY CourierID;
+SELECT * FROM Courier WHERE Weight BETWEEN 2 AND 5;
+SELECT * FROM Employee WHERE Name LIKE '%John%';
+SELECT * FROM Payment WHERE Amount > 50;
